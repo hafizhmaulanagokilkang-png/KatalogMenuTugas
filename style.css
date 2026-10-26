@@ -3,18 +3,24 @@
     text-decoration: none;
     margin: 0px;
     padding: 0px;
+    box-sizing: border-box;
 }
 
 body {
     margin: 0px;
     padding: 0px;
     font-family: 'Arial';
+    overflow-x: hidden;
 }
 
 .wrapper {
-    width: 1001px;
+    max-width: 1100px;
+    width: 90%;
     margin: auto;
     position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo a {
@@ -22,11 +28,10 @@ body {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: 800;
     color: #f8f6f5;
-    float: left;
 }
 
 .menu {
-    float: right;
+    float: none;
 }
 
 nav {
@@ -35,21 +40,23 @@ nav {
     display: flex;
     line-height: 80px;
     position: sticky;
-    position: -webkit-sticky;
     top: 0px;
     background-color: rgb(5, 5, 0);
     z-index: 10;
+    padding: 0 20px;
 }
 
 nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
 nav ul li {
-    float: left;
+    float: none;
 }
 
 nav ul li a {
@@ -67,11 +74,11 @@ nav ul li a:hover {
 a.order {
     background: #f0960e;
     border-radius: 20px;
-    margin-top: 20px;
-    padding: 10px 15px 10px 15px;
+    padding: 10px 15px;
     color: aliceblue;
     cursor: pointer;
     font-weight: bold;
+    line-height: normal;
 }
 /* akhir navbar */
 
@@ -84,17 +91,15 @@ section {
     padding: 40px 0;
 }
 
-/* Membuat wrapper di dalam section menjadi fleksibel agar teks dan gambar berdampingan */
 section .wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 40px;
 }
 
 .kolom {
     text-align: left;
-    margin-top: 0px;
-    margin-bottom: 0px;
     color: #121212;
     width: 52%;
 }
@@ -104,12 +109,6 @@ section .wrapper {
     font-family: 'Times New Roman', Times, serif;
     color: #0b0700;
     line-height: 25px;
-}
-
-p {
-    font-family: 'comic ms sans';
-    color: #0f0900;
-    line-height: 20px;
 }
 
 h2 {
@@ -122,16 +121,13 @@ h2 {
     line-height: 60px;
 }
 
-/* pembungkus gambar banner di sebelah kanan */
 .gambar {
-    margin-top: 0px;
     width: 420px;
+    max-width: 100%;
     height: auto;
     border-radius: 24px;
     object-fit: cover;
     box-shadow: 0 10px 20px rgba(246, 182, 44, 0.7);
-    transition: transform 0.3s ease;
-    transform: translateY(-4px);
 }
 
 a.reservasi {
@@ -139,10 +135,36 @@ a.reservasi {
     background: #f0960e;
     border-radius: 20px;
     margin-top: 20px;
-    padding: 10px 15px 10px 15px;
+    padding: 10px 15px;
     color: aliceblue;
     cursor: pointer;
     font-weight: bold;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-/* AKHIR BANNER */
+
+/* BIAR DI HP GAK BERANTAKAN */
+@media screen and (max-width: 768px) {
+    .wrapper {
+        flex-direction: column;
+        width: 95%;
+    }
+    nav {
+        line-height: normal;
+        padding: 15px 0;
+    }
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 10px;
+    }
+    section .wrapper {
+        flex-direction: column;
+    }
+    .kolom {
+        width: 100%;
+    }
+    .gambar {
+        width: 100%;
+        margin-top: 20px;
+    }
+}
