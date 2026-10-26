@@ -84,10 +84,7 @@ a.order {
 
 /* AWAL BANNER */
 section {
-    margin: 0px;
-    display: flex;
-    margin-bottom: 0px;
-    margin-top: 0px;
+    margin: 0;
     padding: 40px 0;
 }
 
